@@ -1,0 +1,54 @@
+import discord
+ #from bot_logic2 import gen_pass
+ from discord.ext import commands
+ import random
+ import os
+ #from bot_logic import get_duck_image_url
+ 
+ # La variable intents almacena los privilegios del bot
+ intents = discord.Intents.default()
+ # Activar el privilegio de lectura de mensajes
+ intents.message_content = True
+ # Crear un bot en la variable cliente y transferirle los privilegios
+ bot = commands.Bot(command_prefix="$",intents=intents)
+ 
+ @bot.event
+ async def on_ready():
+     print(f'Entrando como {bot.user} (ID: {bot.user.id})')
+     print('------')
+ 
+ @bot.command()
+ async def hello(ctx):
+     await ctx.send("hi")
+ 
+ 
+ @bot.command()
+ async def bye(ctx):
+     await ctx.send("😒")
+ 
+ @bot.command()
+ async def oye_tengo_una_pregunta(ctx):
+     await ctx.send("Bien cuentame")
+ 
+ @bot.command()
+ async def dime_10_acciones_para_reducir_la_contaminacion(ctx):
+     await ctx.send("Bueno lo primero que debes saber es que: ¡Tu Planeta Te Necesita! 🌍 Convierte Pequeños Gestos en un Impacto GIGANTE")
+ 
+ @bot.command()
+ async def ya_puedes_decirlos(ctx):
+     await ctx.send("1. Dale K.O. al Plástico de un Solo Uso 🥤🚫Pasa de las botellas de plástico: Lleva tu propia botella reutilizable molona. ¡Hay diseños increíbles!Adiós pajitas (popotes/cañitas) y bolsas: Si no las necesitas de verdad, ¡di que no! Para la compra, tu mochila o una bolsa de tela son top.Fíjate en el envoltorio: Intenta pillar cosas con menos plástico o que vengan en envases que SÍ se puedan reciclar. ¡Lee las etiquetas!2.")
+ 
+ @bot.command()
+ async def propuesta2(ctx):
+     await ctx.send("2. Muévete con Conciencia 🚴‍♀️🚶‍♂️🚌¿Viaje corto? ¡A moverse! Para ir cerca, ¿necesitas coche? Camina, pilla la bici, el patinete... ¡Es bueno para ti y para el aire!El transporte público es tu aliado: El bus, el metro... mueven a mucha gente a la vez. ¡Menos coches, menos contaminación!")
+ 
+ @bot.command()
+ async def propuesta3(ctx):
+     await ctx.send("3. Reciclar Mola (y es Fácil) ✨♻️¡Separa, no mezcles! Aprende qué va en cada contenedor (papel, plástico, vidrio, orgánico...). No es física cuántica, ¡es un gesto pro!Todo cuenta: Papel de apuntes viejos, la botella de agua, el bote de cristal... ¡Todo puede tener una segunda vida!")
+ 
+ 
+ @bot.command()
+ async def gracias(ctx):
+     await ctx.send("Claro 😊 ayudar es mi trabajo despues de todo ya que soy un bot programado y... mejor dejemos eso de lado hasta luego!!!")
+ 
+ bot.run("")
